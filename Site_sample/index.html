@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Le Manuel de l'Automatique</title>
+        <link rel="stylesheet" href="style.css"> 
+        <!-- <script src="./i18next.js"></script> -->
+        <script src="translation.js" type="module"></script>
+    </head>
+    <header>
+        <nav>
+            <menu>
+                <div class="menu-item" id="demo1">
+                    <a data-i18n="key"></a>
+                    <menu>
+                        <div class="menu-item"><a>about</a></div>
+                   <div class="menu-item">
+                      <a>settings</a>
+                      <menu>
+                         <div class="menu-item"><a>Test 1</a></div>
+                         <div class="menu-item"><a>Test 2</a></div>
+                         <div class="menu-item"><a>Test 3</a></div>
+                         <div class="menu-item"><a>Test 4</a></div>
+                      </menu>  
+                   </div>
+                        <div class="menu-item"><a>help</a></div>
+                        <div class="menu-item" id="demo2">
+                            <a>more</a>
+                            <menu>
+                                <div class="menu-item" id="demo3">
+                                    <a>deeper</a>
+                                    <menu>
+                                        <div class="menu-item"><a>deep 1</a></div>
+                                        <div class="menu-item"><a>deep 2</a></div>
+                                        <div class="menu-item"><a>deep 3</a></div>
+                                    </menu>
+                                </div>
+                                <div class="menu-item"><a>test</a></div>
+                            </menu>
+                        </div>
+                    </menu>
+                </div>
+             <div class="menu-item"><a>no drop</a></div>
+             <select data-i18n-switcher class="locale-switcher">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+            </select>
+            </menu>
+        </nav>
+        <div class="navbar-right">
+          <!-- ... -->
+
+        </div>
+    </header>
+    <body>
+      <p style="color: white; font-size: 40px;" data-i18n="common structure"></p>
+      <p style="color: white; font-size: 40px;" data-i18n="Too many geocoding requests for now, please retry"></p>
+    </body>
+</html>
