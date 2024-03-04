@@ -240,6 +240,10 @@
     right:20px;
   }
 
+  nav a {
+    min-width: 200px;
+  }
+
   nav > menu{
     margin-left: 10px;
     /* justify-content: flex-start; */
@@ -365,9 +369,12 @@ div.social_logos > a > img{
 
     nav > menu{
       /* margin-left: 10px; */
-      justify-content: flex-start;
+      justify-content: center;
     }
-  
+    
+    nav a{
+      min-width: auto;
+    }
 
     .logo_hero{
       top: 20%;
