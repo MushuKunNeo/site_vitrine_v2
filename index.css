@@ -77,7 +77,12 @@ section.main_container{
 /* HTML Nav Styles */
 
 header{
-  margin: auto;
+  /* margin: auto; */
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  position: fixed;
 }
 
 
@@ -130,19 +135,21 @@ nav .menu-item:nth-child(4)::after{
 nav .menu-item > menu {
   position: absolute;
   pointer-events:none;
+  min-width: 100%;
 }
 
 nav > menu { 
   display:flex;
   flex-direction: row;
+  position: relative;
   gap: 10px;
   margin: auto;
   max-width: 1000px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: stretch;
 }
 
-nav > menu > .menu-item { pointer-events: all; opacity:1; }
+nav > menu > .menu-item { pointer-events: all; opacity:1; width: 100%;}
 menu .menu-item a { white-space:nowrap; display:block; }
   
 .menu-item:hover > menu {
@@ -155,6 +162,7 @@ menu:hover > .menu-item{
 nav > menu > .menu-item .menu-item menu {
   transform:translateX(100%);
   top:0; right:0;
+  width: 100%;
 }
 
 nav {
@@ -164,11 +172,13 @@ nav {
   /* justify-content: center; */
   width: 100%;
   /* margin: auto; */
-  margin-top: 20px;
+  margin: 20px 20px 0px 10px;
+  /* margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px; */
   /* margin-right: 100px; */
   /* margin-left: 40px; */
-  z-index: 100;
-  position: fixed;
+
 }
 
 
@@ -179,9 +189,10 @@ nav a {
   -webkit-backdrop-filter: blur( 1.5px );
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   color:var(--white);
-  min-width: 300px;
+  /* min-width: 300px; */
   font-size: 20px;
   text-align: center;
+  /* width: 100%; */
   transition: background 0.5s, color 0.5s, transform 0.5s;
   text-shadow: 2px 2px 5px #000000;
   /* margin:0px 6px 6px 0px; */
@@ -230,11 +241,11 @@ nav a.orange::after{
     transform: translate3d(-400%, 0, 0) rotate(35deg);
   }
   20% {
-    transform: translate3d(400%, 0, 0) rotate(35deg);
+    transform: translate3d(500%, 0, 0) rotate(35deg);
   }
 
   100% {
-    transform: translate3d(400%, 0, 0) rotate(35deg);
+    transform: translate3d(500%, 0, 0) rotate(35deg);
   }
 }
 
@@ -750,7 +761,7 @@ div.content_wrapper {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
   width: 100%;
   background: rgba( 5, 57, 66, 0.8 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.8 );
@@ -762,20 +773,20 @@ div.content_wrapper {
 /* div.content_wrapper::after{
   content: '';
   position: absolute;
-  top: -5px;
-  left: -5px;
-  width: 5px;
-  height: 5px;
-  border-radius: 5px;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
   box-shadow: 0 0 8px 2px white;
   background: white;
-  animation: turn_point 10s linear infinite;
+  animation: shine_border 10s ease-in-out infinite;
 } */
 
 div.content_wrapper.picture{
   padding: 40px 40px 40px 40px;
   gap: 40px;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 }
 
 div.content_wrapper.title{
@@ -816,6 +827,14 @@ div.divider:after{
   /* animation: animate_central_cube 4s linear infinite; */
 }
 
+div.divider::before{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  animation: shine 10s ease-in-out infinite;
+}
+
 /* div.divider:before{
   content: '';
   position: absolute;
@@ -836,11 +855,37 @@ div.divider:after{
   }
 }
 
-@keyframes slide_hor_inv {
-  100% {
-    /* translate: 100% 0; */
-    right: 100%;
+@keyframes shine_border {
+  0%{
+    /* background: white; */
+    border: 1px solid white;
+    box-shadow: 0 0 8px 2px white;
   }
+  30%{
+    border: none;
+    box-shadow: none;
+    /* background: transparent; */
+  }
+  100%{
+    border: none;
+    box-shadow: none;
+    /* background: transparent; */
+  }  
+}
+
+@keyframes shine {
+  0%{
+    background: white;
+    box-shadow: 0 0 8px 2px white;
+  }
+  20%{
+    box-shadow: none;
+    background: transparent;
+  }
+  100%{
+    box-shadow: none;
+    background: transparent;
+  }  
 }
 
 div.divider.cyan{
@@ -951,6 +996,7 @@ h2 {
 
 h3 {
   font-size: 24px;
+  line-height: 34px;
   text-align: center;
 }
 
@@ -987,14 +1033,17 @@ div.puce_wrapper{
   margin: 0 auto 0 auto;
   width: 100%;
   /* padding: 20px; */
+}
 
+div.content_wrapper.yellow > div.puce_wrapper{
+  
 }
 
 div.grid_puce{
   display: grid;
   grid-template-columns: 1fr 11fr;
   row-gap: 20px;
-  column-gap: 10px;
+  column-gap: 15px;
   justify-content: center;
   align-items: center;
   margin: auto;
@@ -1421,7 +1470,7 @@ div.social_logos > a > img:hover{
   transform: rotateZ(45deg);
   width: calc(var(--cubeSize)/ 1.5);
   height: calc(var(--cubeSize)/1.5);
-  box-shadow: 0 0 10px 2px white;
+  box-shadow: 0 0 5px 2px white;
 }
 
 p.important{
