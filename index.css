@@ -830,6 +830,7 @@ div.divider:after{
 div.divider::before{
   content: '';
   position: absolute;
+  border-radius: 5px;
   height: 100%;
   width: 100%;
   animation: shine 10s ease-in-out infinite;
@@ -967,6 +968,18 @@ img.snap_picture {
   height: auto;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
   border-radius: 5px;
+
+}
+
+img.linked{
+  transition: all 0.5s ;
+  /* transition: scale 0.5s; */
+}
+
+img.linked:hover{
+  transform: scale(1.05);
+  box-shadow: 2px 2px 8px 2px white;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
 }
 
 div.content_title{
@@ -1063,7 +1076,7 @@ a.button {
   -webkit-backdrop-filter: blur( 1.5px ); */
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   text-align: center;
-  transition: background 0.5s, color 0.5s, transform 0.5s;
+  transition: scale 0.5s, background 0.5s, color 0.5s, transform 0.5s;
   text-shadow: 1px 1px 5px #000000;
   /* border: 1px solid transparent; */
   color: white;
@@ -1078,6 +1091,7 @@ a.button {
   width: fit-content;
   overflow: hidden;
   position: relative;
+  /* transition: ; */
 }
 
 a.button::after
