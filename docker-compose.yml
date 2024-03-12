@@ -1,0 +1,11 @@
+# Fichier example pour un déployment du site vitrine avec docker compose
+# Le site vitrine est accessible via https://localhost:8081
+
+version: '3.4'
+services:
+  vitrine:
+    build: .
+    # image: docker_username/vitrine:<tag>
+    ports:
+      - "8081:80"
+    restart: always
