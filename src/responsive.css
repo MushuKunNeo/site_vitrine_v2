@@ -26,9 +26,9 @@
     width: 400px;
   }
 
-    .logo_hero{
+    /* .logo_hero{
         top: 20%;
-      }
+      } */
 
       h1{
         font-size: 28px;
@@ -426,9 +426,9 @@ section.copyright_footer{
     min-width: auto;
   }
 
-  .logo_hero{
+  /* .logo_hero{
     top: 20%;
-  }
+  } */
 
   .img_logo_hero{
     width: 200px;
