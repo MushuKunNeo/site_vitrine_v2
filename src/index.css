@@ -1110,7 +1110,8 @@ div.wrapper_profile_picture{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ;
+  transition: transform 0.5s;
+  cursor: pointer;
 }
 
 div.wrapper_profile_picture:hover{
@@ -1123,6 +1124,7 @@ div.wrapper_profile_picture:hover{
 
 div.wrapper_profile_picture > img{
   width: 200px;
+  height: 200px;
 }
 
 .calendly_widget{

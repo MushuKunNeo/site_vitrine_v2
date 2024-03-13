@@ -402,6 +402,7 @@ div.social_logos > a > img{
 
 div.wrapper_profile_picture > img{
   width: 150px;
+  height: 150px;
 }
 
 section.copyright_footer{
