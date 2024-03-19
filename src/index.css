@@ -1095,7 +1095,7 @@ div.content_wrapper.slider {
   margin: auto;
   overflow: hidden;
   position: relative;
-  width: 1340px;
+  /* width: 1340px; */
   margin-bottom: 150px;
 
 }
@@ -1141,7 +1141,7 @@ div.content_wrapper.slider {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(1200px));
+    transform: translateX(calc(-400px * 6));
   }
 }
 
@@ -1150,7 +1150,7 @@ div.content_wrapper.slider {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-300px * 6));
+    transform: translateX(calc(-400px * 6));
   }
 }
 
