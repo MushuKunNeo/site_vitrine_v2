@@ -194,15 +194,16 @@
 
 @media only screen and (max-width: 1000px) {
 
-  nav a {
+  nav a, nav button {
     /* min-width: 100px; */
     font-size: 16px;
     padding: 10px 10px 10px 10px;
   }
 
-  a.dropdown > div.picto_menu {
-    justify-content: center;
+ div.picto_menu {
+    /* justify-content: flex-start; */
     gap: 10px;
+    /* padding: 10px 40px 10px 40px; */
   }
 
   div.picto_menu > p{
@@ -252,6 +253,10 @@
     margin: 20px auto 0 auto;
   }
 
+  img.logo_clients{
+    height: 100px;
+  }
+
   section.footer{
     min-height: 400px;
     padding: 40px 40px 0px 40px;
@@ -268,13 +273,18 @@
     right:20px;
   }
 
-  nav a {
+  nav a, nav button {
     min-width: 200px;
+    font-size: 16px;
+    padding: 10px 20px 10px 20px;
   }
 
+  nav > menu > .menu-item > menu > .menu-item {
+    margin-top: 5px;
+  }
 
   div.picto_menu{
-    gap: 5px;
+    gap: 10px;
   }
 
   nav .menu-item.no_mobile{
@@ -520,8 +530,4 @@ section.copyright_footer{
     width: 200px;
   }
   
-}
-
-@media only screen and (max-width: 400px) {
-
 }
